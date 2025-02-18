@@ -1,0 +1,241 @@
+/* style.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient background */
+    color: #333; /* Dark text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1e1e2f, #2c2c3e); /* Dark gradient background */
+    color: #f0f0f0; /* Light text color */
+}
+
+/* Container Styling */
+.container {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white container */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    max-width: 800px;
+    width: 100%;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+}
+
+body.dark-mode .container {
+    background: rgba(40, 40, 60, 0.9); /* Semi-transparent dark container */
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #5cb85c; /* Green accent color */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode h2 {
+    color: #6fcf97; /* Lighter green for dark mode */
+}
+
+/* Date Styling */
+#date {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+    display: block;
+}
+
+body.dark-mode #date {
+    color: #aaa;
+}
+
+/* Content Styling */
+.content {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Input Styling */
+#input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+}
+
+body.dark-mode #input {
+    background: rgba(50, 50, 70, 0.8);
+    border-color: #444;
+    color: #f0f0f0;
+}
+
+#input::placeholder {
+    color: #999;
+}
+
+body.dark-mode #input::placeholder {
+    color: #777;
+}
+
+#input:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 12px rgba(92, 184, 92, 0.4);
+}
+
+/* Button Styling */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #5cb85c;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(92, 184, 92, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Task List Styling - Card Layout */
+#todoList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Task Item Styling - Card */
+.task-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark-mode .task-item {
+    background: rgba(50, 50, 70, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task-item span {
+    color: #333;
+    flex: 1;
+    margin-right: 10px;
+}
+
+body.dark-mode .task-item span {
+    color: #f0f0f0;
+}
+
+.task-item button {
+    padding: 8px 16px;
+    background: #e74c3c;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-item button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.task-item button:active {
+    transform: scale(0.95);
+}
+
+/* Dark/Light Mode Toggle */
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease, transform 0.2s ease;
+}
+
+body.dark-mode .mode-toggle {
+    background: rgba(50, 50, 70, 0.9);
+}
+
+.mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+.mode-toggle:active {
+    transform: scale(0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-item {
+        width: 100%;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
